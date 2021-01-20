@@ -14,39 +14,51 @@
 	<h3>Fill the application form below and submit.</h3>
 	<form>
 		<label>Name *</label>
-		<input type="text" placeholder="First Name">
-		<input type="text" placeholder="Last Name">
+		<input type="text" id = "ipname" placeholder="First Name">
+		<input type="text" id = "iplastname" placeholder="Last Name">
 
-		<br>
-		<label>E-Mail Address *</label>
-		<input type="text" placeholder="Mail@example.com">
+		<br><br>
+		<label>E-Mail*</label>
+		<input type="email" id = "ipemail"placeholder="Mail@example.com">
 
-		<br>
+		<br><br>
 		<label>Phone Number *</label>
-		<input type="phone" placeholder="Phone Number">
+		<input type="text" id = "ipphone" placeholder="Phone Number">
 	
-		<br>
-		<label>Gender</label>
-		<input type="phone" placeholder="Gender">
+		<br><br>
+		<label>Gender *</label>
+		<select name = "ipgender" id = "ipgender" size = "1">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+			<option value="Other">Other</option>
+		</select>
 
-		<br>
+		<br><br>
 		<label>Citizen *</label>
-		<input type="text" placeholder="Select Country">
+		<select name = "ipcountry" id = "ipcountry" size = "1">
+			<option value="India">India</option>
+			<option value="Pakistan">Pakistan</option>
+			<option value="Other">Other</option>
+		</select>
 
-		<br>
+		<br><br>
 		<label>Date of Birth *</label>
+		<input type="number" id = "ipd" min = "1" max = "31" placeholder="Date">
+		<input type="number" id = "ipm" min = "1" max = "12" placeholder="Month">
+		<input type="number" id = "ipy" min = "1990" placeholder="Year">
 
 
-		<br>
+
+		<br><br>
 		<label>Address *</label>
-		<input type="text" placeholder="Street Address">
-		<input type="text" placeholder="Select line 2">
+		<input type="text" id = "ipsa" placeholder="Street Address">
+		<input type="text" id = "ipsl" placeholder="Select line 2">
 		<br>
-		<input type="text" placeholder="Landmark">
-		<input type="text" placeholder="City">
+		<input type="text" id = "ipl" placeholder="Landmark">
+		<input type="text" id = "ipc" placeholder="City">
 		<br>
-		<input type="text" placeholder="State/Province">
-		<input type="text" placeholder="Postal/Zip Code">
+		<input type="text" id = "ips" placeholder="State/Province">
+		<input type="text" id = "ipp" placeholder="Postal/Zip Code">
 
 		<br>
 		<input type="submit" class = "subbutton">
