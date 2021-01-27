@@ -1,5 +1,6 @@
 
 
+
 <?php
 $name = ''; 
 $email = ''; 
@@ -20,7 +21,10 @@ $interest = '';
 		$email = ''; 
 	}
 	if (isset($_POST['Contact'])) {
-		$contact = $_POST['Contact'];
+        $contact = $_POST['Contact'];
+    	if(! (is_numeric($contact))){
+        	echo "<script>alert('contact number should contains numeric values')</script>" ;
+    	}
 	}
 	else{
 		$contact = ''; 
@@ -41,17 +45,13 @@ $interest = '';
 	if (isset($_POST['Interest'])) {
 		$interest = $_POST['Interest'];
 		$interest = implode(" , ", $interest); 
+	   if (substr_count($interest,",")<1){
+	    echo "<script>alert('select atleast two intrests')</script>" ;
+		}	
 	}
 	else{
 		$interest = '';  
 	}
-
-		// echo "Name : " . $name . "<br>" ;
-		// echo "Email : " . $email. "<br>" ;
-		// echo "Contact : " . $contact. "<br>" ;
-		// echo "City : " . $city. "<br>" ;
-		// echo "Course : " . $course. "<br>" ;
-		// echo "Interest : " . $interest. "<br>";
 ?>
 <table border="2" cellpadding = "10" align="center">
 	<tr>
@@ -78,7 +78,7 @@ $interest = '';
 	<!-- 2 -->
 	<tr><td>Email <td><input type="email" placeholder="Enter Email" name = "Email" required></td></tr>
 	<!-- 3 -->
-	<tr><td>Contact <td><input type="tel" placeholder="Enter Contact" name = "Contact"required></td></tr>
+	<tr><td>Contact <td><input  type="tel"  minlength="10" maxlength="10"  placeholder="Enter Contact" name = "Contact"required></td></tr>
 	<!-- 4 -->
 	<tr><td>City 
 		<td><select name = "City"required>
