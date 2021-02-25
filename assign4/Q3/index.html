@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SWAPPER</title>
+</head>
+<body>
+	<p class = "Para1"> HELLO ABHISHEK HERE !</p>
+	<p class=  "Para2"> HELLO SOAURABH HERE !</p>
+	<button onclick = "change()">  CLICK</button>
+
+
+	<script>
+		function change()
+		{
+			p1 = document.getElementsByClassName('Para1');
+			p2 = document.getElementsByClassName('Para2');
+			temp = p1[0].textContent;
+			p1[0].textContent = p2[0].textContent;
+			p2[0].textContent = temp; 
+		}
+	</script>
+</body>
+</html>
