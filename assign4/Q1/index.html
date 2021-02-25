@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>CIRCLE COLOR CHANGER</title>
+	<style>
+		 
+		div{
+			margin-left: 100px;
+			width : 150px;
+			height : 150px;
+			border: 1px solid black;
+			background-color: blueviolet;
+			border-radius: 50%;  
+		}
+		#btn{
+			margin-left:120px;
+		}
+	</style>
+</head>
+<body>
+	<div id = "div1"></div>
+	<br><br>
+	<button onclick = "colorchange()" id = "btn">CLICK ME!</button>
+
+	<script>
+		var counter = 0;
+		var colors = ["red" , "blue" , "green" , "violet" , "yellow"]; 
+		function colorchange()
+		{
+			ele = document.getElementById('div1');
+			ele.style.backgroundColor = colors[(counter++) % colors.length]; 
+		}
+	</script>
+
+
+</body>
+</html>
