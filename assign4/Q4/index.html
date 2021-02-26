@@ -3,40 +3,44 @@
 <head>
 </head>
 <body>
-
 	<div class="container">
 		
 		<h1>THESE ARE SOME LINKS IN OUR WEBPAGE</h1>
-		<a href="www.google.com"> google</a><br>
-	    <a href="www.facebook.com"> facebook</a><br>
-	    <a href="www.amazon.com"> amazon</a><br>
-	    <a href="www.facebook.com"> facebook</a><br>
-	    <a href="www.netflix.com"> netflix</a><br>
-	    <a href="www.cricbuzz.com"> cricbuzz</a><br>
-	    <h1>CLICK BUTTON TO EXTRACT THESE LINKS</h1>
-	    <button onclick="make_table()">CLICK ME!</button>
-	</div>
+		    <a href="www.google.com"> google</a><br>
+		    <a href="www.facebook.com"> facebook</a><br>
+		    <a href="www.amazon.com"> amazon</a><br>
+		    <a href="www.facebook.com"> facebook</a><br>
+		    <a href="www.netflix.com"> netflix</a><br>
+		    <a href="www.cricbuzz.com"> cricbuzz</a><br>
 
+		<h1>CLICK BUTTON TO EXTRACT THESE LINKS</h1>
+	   	    <button onclick="make_table()">CLICK ME!</button>
+	</div>
 	
-	<script type="text/javascript">
+	<script>
 		var x = document.querySelectorAll("a");
 		var myarray = []
-		for (var i = 0; i < x.length; i++) {
+		
+		for (var i = 0; i < x.length; i++)
+		{
 		  var nametext = x[i].textContent;
 		  var cleantext = nametext.replace(/\s+/g, ' ').trim();
 		  var cleanlink = x[i].href;
 		  myarray.push([cleantext, cleanlink]);
+	
 		};
 
-		function make_table() {
-		  var table = '<table><thead><th>Name</th><th>Links</th></thead><tbody>';
-		  for (var i = 0; i < myarray.length; i++) {
-		    table += '<tr><td>' + myarray[i][0] + '</td><td>' + myarray[i][1] + '</td></tr>';
-		  };
-
-		  var w = window.open("");
-		  w.document.write(table);
-		}
+		function make_table()
+		{
+		   var table = '<table><thead><th>Name</th><th>Links</th></thead><tbody>';
+		   for (var i = 0; i < myarray.length; i++)
+		   {
+		     table += '<tr><td>' + myarray[i][0] + '</td><td>' + myarray[i][1] + '</td></tr>';
+		   };
+			
+		   var w = window.open("");
+		   w.document.write(table);
+	        }
 	</script>
 </body>
 </html>
