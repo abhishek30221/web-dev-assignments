@@ -1,0 +1,12 @@
+body
+{
+	width: 300px;
+	margin:auto; 
+}
+.square
+{
+	height:80px;
+	width:100px;
+	font-size: 45pt; 
+	text-align: center; 	
+}
