@@ -2,6 +2,7 @@ body
 {
 	width: 300px;
 	margin:auto; 
+	background-color: #EAF2EF; 
 }
 .square
 {
@@ -9,4 +10,9 @@ body
 	width:100px;
 	font-size: 45pt; 
 	text-align: center; 	
+}
+.btn
+{
+	margin-left: 100px;
+	margin-top:100px	;
 }
