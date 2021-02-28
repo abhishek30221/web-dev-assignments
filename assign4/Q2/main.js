@@ -13,9 +13,14 @@ function startGame()
 
 function nextMove(square)
 {
-	if(square.innerText == '')
+	if(square.innerText == '' && document.winner == null)
 	{
 		square.innerText = document.turn; 
+		switchTurn(); 
+	}
+	else if(square.innerText == '' && document.winner != null)
+	{
+		square.innerText = ""; 
 		switchTurn(); 
 	}
 	else
@@ -29,7 +34,7 @@ function switchTurn()
 	
 	if(document.winner != null)
 	{
-		setMessage(document.turn + " Already Won !")
+		setMessage(document.turn + " is already Won !")
 	}	
 	else if(checkForWinner(document.turn))
 	{
@@ -41,10 +46,14 @@ function switchTurn()
 	    document.turn = "0";
 		setMessage(document.turn + "'s chance"); 
 	}
-	else
+	else if(document.turn == "0")
 	{
 		document.turn = "X";
 		setMessage(document.turn + "'s chance"); 
+	}
+	else if(checkForWinner(document.turn))
+	{
+		setMessage("DRAW");
 	}
 }
 
